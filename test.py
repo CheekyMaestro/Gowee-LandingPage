@@ -1,6 +1,6 @@
 import re
 
-html_path = 'gowwee-landing.html'
+html_path = 'index.html'
 with open(html_path, 'r', encoding='utf-8') as f:
     content = f.read()
 
