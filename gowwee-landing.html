@@ -1,0 +1,1957 @@
+<!DOCTYPE html>
+<html class="dark scroll-smooth" lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>GOWWEE | Aura of Timeless Elegance</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdn.jsdelivr.net/npm/ogl@0.0.64/dist/ogl.umd.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Inter:wght@400;700;900&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;family=Playfair+Display:wght@100..900&amp;display=swap"
+        rel="stylesheet">
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#251917",
+                        "on-primary-fixed": "#410003",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "inverse-surface": "#f5dddb",
+                        "on-tertiary-fixed": "#001c39",
+                        "on-secondary": "#313030",
+                        "accent-gold-light": "#FFD54A",
+                        "error-container": "#93000a",
+                        "on-primary-container": "#ff8178",
+                        "outline-variant": "#58413f",
+                        "surface-tint": "#ffb3ac",
+                        "surface-container-high": "#342725",
+                        "tertiary": "#a4c9ff",
+                        "neutral-light": "#F5F5F5",
+                        "surface-bright": "#443634",
+                        "accent-gold": "#F5B400",
+                        "on-tertiary-fixed-variant": "#15487c",
+                        "surface-container-highest": "#403130",
+                        "primary": "#ffb3ac",
+                        "on-error": "#690005",
+                        "on-tertiary": "#00315d",
+                        "surface-container": "#291d1b",
+                        "secondary-fixed": "#e5e2e1",
+                        "secondary-container": "#474746",
+                        "on-surface-variant": "#dfbfbc",
+                        "primary-fixed-dim": "#ffb3ac",
+                        "outline": "#a78a87",
+                        "on-secondary-fixed-variant": "#474746",
+                        "on-secondary-container": "#b7b5b4",
+                        "surface": "#1c100f",
+                        "pure-white": "#FFFFFF",
+                        "surface-dim": "#1c100f",
+                        "inverse-on-surface": "#3b2d2c",
+                        "on-surface": "#f5dddb",
+                        "on-background": "#f5dddb",
+                        "primary-fixed": "#ffdad6",
+                        "primary-container": "#7a0e12",
+                        "tertiary-fixed": "#d4e3ff",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "on-tertiary-container": "#7fa9e3",
+                        "inverse-primary": "#ab3430",
+                        "on-primary-fixed-variant": "#8a1b1b",
+                        "on-primary": "#680008",
+                        "tertiary-container": "#003d71",
+                        "tertiary-fixed-dim": "#a4c9ff",
+                        "surface-container-lowest": "#160b0a",
+                        "secondary": "#c8c6c5",
+                        "surface-variant": "#403130",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "background": "#1c100f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max-width": "1280px",
+                        "gutter": "24px",
+                        "section-padding-mobile": "64px",
+                        "section-padding-desktop": "120px"
+                    },
+                    "fontFamily": {
+                        "tagline": ["Playfair Display"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"],
+                        "body-lg": ["Inter"],
+                        "promo-number": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-md": ["Playfair Display"],
+                        "label-bold": ["Inter"]
+                    },
+                    "fontSize": {
+                        "tagline": ["20px", { "lineHeight": "1.4", "fontWeight": "400" }],
+                        "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "display-lg": ["64px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "promo-number": ["80px", { "lineHeight": "1", "letterSpacing": "-0.04em", "fontWeight": "900" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "label-bold": ["14px", { "lineHeight": "1.2", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease-out;
+        }
+
+        .stagger-item.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes pulse-soft {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .animate-pulse-soft {
+            animation: pulse-soft 3s infinite ease-in-out;
+        }
+
+        .gold-underline {
+            position: relative;
+        }
+
+        .gold-underline::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 40px;
+            height: 1px;
+            background: #F5B400;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1c100f;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #7a0e12;
+            border-radius: 4px;
+        }
+
+        .scent-card {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .scent-card.hidden-card {
+            display: none;
+        }
+
+        .filter-btn.is-active {
+            background-color: #F5B400;
+            color: #1c100f;
+            border-color: #F5B400;
+        }
+
+        .filter-btn {
+            border: 1px solid #a78a87;
+            color: #dfbfbc;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-toggle[aria-expanded="true"] .faq-icon {
+            transform: rotate(135deg);
+        }
+
+        #toast {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .testimonial-track {
+            animation: marquee-right 32s linear infinite;
+            will-change: transform;
+        }
+
+        .testimonial-marquee-wrap:hover .testimonial-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee-right {
+            from {
+                transform: translateX(-50%);
+            }
+
+            to {
+                transform: translateX(0%);
+            }
+        }
+
+        .testimonial-marquee-wrap {
+            mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+        }
+
+        @keyframes blink-cursor {
+            0%, 100% { border-color: #F5B400; }
+            50% { border-color: transparent; }
+        }
+
+        * { cursor: none !important; }
+
+        #cursor-dot {
+            position: fixed;
+            top: 0; left: 0;
+            width: 8px; height: 8px;
+            background: #F5B400;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99999;
+            transform: translate(-50%, -50%);
+            transition: transform 0.1s ease, width 0.2s ease, height 0.2s ease, background 0.2s ease;
+            will-change: left, top;
+        }
+
+        #cursor-ring {
+            position: fixed;
+            top: 0; left: 0;
+            width: 36px; height: 36px;
+            border: 1.5px solid rgba(245, 180, 0, 0.6);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 99998;
+            transform: translate(-50%, -50%);
+            transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+            will-change: left, top;
+        }
+
+        body.cursor-hover #cursor-dot {
+            width: 12px; height: 12px;
+            background: #fff;
+        }
+
+        body.cursor-hover #cursor-ring {
+            width: 52px; height: 52px;
+            border-color: #F5B400;
+            background: rgba(245, 180, 0, 0.08);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background text-on-background font-body-md selection:bg-accent-gold selection:text-black overflow-x-hidden">
+
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+    <!-- Debug Overlay to Display Console and JS Errors directly on the Page -->
+    <script>
+        (function() {
+            var errDiv = null;
+            function ensureOverlay() {
+                if (errDiv) return errDiv;
+                errDiv = document.createElement('div');
+                errDiv.id = 'debug-error-overlay';
+                errDiv.style.cssText = 'position:fixed;bottom:20px;right:20px;background:rgba(220,38,38,0.95);color:white;padding:16px;border-radius:8px;z-index:999999;font-family:monospace;font-size:12px;max-width:450px;white-space:pre-wrap;box-shadow:0 10px 15px -3px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.2);';
+                
+                var title = document.createElement('div');
+                title.style.fontWeight = 'bold';
+                title.style.marginBottom = '8px';
+                title.style.borderBottom = '1px solid rgba(255,255,255,0.3)';
+                title.style.paddingBottom = '4px';
+                title.textContent = '⚠️ Debug Error Console';
+                errDiv.appendChild(title);
+                
+                var content = document.createElement('pre');
+                content.id = 'debug-error-content';
+                content.style.margin = '0';
+                content.style.maxHeight = '200px';
+                content.style.overflowY = 'auto';
+                errDiv.appendChild(content);
+                
+                document.body.appendChild(errDiv);
+                return errDiv;
+            }
+            
+            window.addEventListener('error', function(e) {
+                ensureOverlay();
+                var content = document.getElementById('debug-error-content');
+                content.textContent += 'JS ERROR: ' + e.message + '\n  at ' + e.filename + ':' + e.lineno + '\n\n';
+            });
+            
+            var orgError = console.error;
+            console.error = function() {
+                orgError.apply(console, arguments);
+                ensureOverlay();
+                var content = document.getElementById('debug-error-content');
+                var msg = Array.prototype.slice.call(arguments).map(function(arg) {
+                    if (arg && arg.stack) return arg.stack;
+                    if (typeof arg === 'object') return JSON.stringify(arg);
+                    return String(arg);
+                }).join(' ');
+                content.textContent += 'CONSOLE ERROR: ' + msg + '\n\n';
+            };
+        })();
+    </script>
+
+    <!-- 1. NAVBAR -->
+    <nav class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-md transition-colors duration-300">
+        <div class="flex justify-between items-center px-gutter py-6 max-w-container-max-width mx-auto">
+            <div class="font-display-lg text-headline-md tracking-widest text-white uppercase cursor-pointer"
+                onclick="window.scrollTo({top: 0, behavior: 'smooth'})">GOWWEE</div>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-on-surface-variant font-label-bold text-label-bold hover:text-accent-gold transition-colors duration-200"
+                    href="#best-sellers">Collections</a>
+                <a class="text-on-surface-variant font-label-bold text-label-bold hover:text-accent-gold transition-colors duration-200"
+                    href="#scent-library">Koleksi Aroma</a>
+                <a class="text-on-surface-variant font-label-bold text-label-bold hover:text-accent-gold transition-colors duration-200"
+                    href="#best-sellers">Best Sellers</a>
+                <a class="text-on-surface-variant font-label-bold text-label-bold hover:text-accent-gold transition-colors duration-200"
+                    href="#brand-story">About Us</a>
+                <a class="text-on-surface-variant font-label-bold text-label-bold hover:text-accent-gold transition-colors duration-200"
+                    href="#footer-section">Kontak</a>
+            </div>
+            <div class="flex items-center gap-6 text-on-surface">
+                <a href="https://wa.me/6285645464797" target="_blank" rel="noopener"
+                    class="hover:text-accent-gold transition-all duration-200" title="Chat WhatsApp"><span
+                        class="material-symbols-outlined">chat</span></a>
+            </div>
+        </div>
+    </nav>
+    <!-- 2. HERO -->
+    <section
+        class="relative min-h-screen pt-32 pb-section-padding-mobile md:pb-section-padding-desktop bg-gradient-to-br from-[#3d0608] via-[#8a1116] to-[#d81f2a] overflow-hidden">
+        <div class="absolute inset-0 opacity-40 pointer-events-none">
+            <div class="absolute top-1/4 -left-1/4 w-[600px] h-[600px] bg-accent-gold rounded-full blur-[160px]"></div>
+            <div
+                class="absolute bottom-1/4 -right-1/4 w-[600px] h-[600px] bg-on-primary-container rounded-full blur-[160px]">
+            </div>
+        </div>
+        <div
+            class="relative px-gutter max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-2 items-center gap-16">
+            <div class="relative group order-2 md:order-1 reveal">
+                <div
+                    class="absolute inset-0 bg-black/20 blur-3xl transform scale-75 group-hover:scale-90 transition-transform duration-700">
+                </div>
+                <img alt="Gowwee Signature Perfume Bottle"
+                    class="relative z-10 w-full max-w-[480px] mx-auto drop-shadow-[0_35px_35px_rgba(0,0,0,0.6)] group-hover:-translate-y-4 transition-transform duration-700 ease-out"
+                    src="Gorgeous.png">
+                <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 w-48 h-8 bg-black/40 blur-2xl rounded-full">
+                </div>
+                <!-- GANTI src DI ATAS DENGAN FOTO PRODUK UNGGULAN GOWWEE (background transparan/menyatu) begitu foto asli tersedia -->
+            </div>
+            <div class="order-1 md:order-2 space-y-8 reveal" style="transition-delay: 200ms;">
+                <div
+                    class="inline-flex items-center px-4 py-1.5 rounded-full border border-accent-gold/40 bg-accent-gold/5 animate-pulse-soft">
+                    <span class="text-accent-gold font-label-bold text-label-bold tracking-[0.2em] uppercase">Edisi
+                        Eksklusif</span>
+                </div>
+                <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg leading-tight">
+                    Aura of <br>
+                    <span class="italic font-normal" id="typewriter-text"></span><span id="typewriter-cursor" class="italic font-normal" style="border-right: 3px solid #F5B400; margin-left: 2px; animation: blink-cursor 0.75s step-end infinite;"></span>
+                </h1>
+                <p class="text-on-surface-variant font-body-lg text-body-lg max-w-lg">
+                    Rasakan mahakarya sensori dari 20+ aroma pilihan. Diracik dengan bahan pilihan terbaik untuk jejak
+                    keharuman yang tak terlupakan.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-4">
+                    <a class="px-10 py-4 bg-accent-gold text-surface font-label-bold text-label-bold rounded-full hover:bg-accent-gold-light hover:scale-105 transition-all duration-300 flex items-center gap-2 group"
+                        href="#best-sellers">
+                        Shop Collection
+                        <span
+                            class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </a>
+                    <a class="px-10 py-4 border border-on-surface/20 text-on-surface font-label-bold text-label-bold rounded-full hover:bg-on-surface/5 hover:scale-105 transition-all duration-300"
+                        href="#scent-library">
+                        View Lookbook
+                    </a>
+                </div>
+                <div class="pt-10 flex flex-col sm:flex-row gap-6 text-on-surface-variant/80 text-sm">
+                    <a href="https://wa.me/6285645464797" target="_blank" rel="noopener"
+                        class="flex items-center gap-2 hover:text-accent-gold transition-colors">
+                        <span class="material-symbols-outlined text-accent-gold text-base">call</span>
+                        <span>WA: 0856-4546-4797</span>
+                    </a>
+                    <a href="https://shopee.co.id/gowweeperfumes?categoryId=100630&entryPoint=ShopByPDP&itemId=6309478671&upstream=search"
+                        target="_blank" rel="noopener"
+                        class="flex items-center gap-2 hover:text-accent-gold transition-colors">
+                        <span class="material-symbols-outlined text-accent-gold text-base">shopping_cart</span>
+                        <span>Shopee: GOWWEE</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 3. TRUST BAR -->
+    <section class="bg-surface-container-low py-16 border-y border-outline-variant/30">
+        <div class="px-gutter max-w-container-max-width mx-auto flex flex-wrap justify-around gap-12 text-center">
+            <div class="reveal">
+                <div class="counter text-accent-gold font-display-lg text-headline-md mb-1" data-target="4.9"
+                    data-decimals="1" data-suffix="/5">0.0/5</div>
+                <div class="text-on-surface-variant font-label-bold text-xs uppercase tracking-widest">Customer Rating
+                </div>
+            </div>
+            <div class="reveal" style="transition-delay: 100ms;">
+                <div class="counter text-accent-gold font-display-lg text-headline-md mb-1" data-target="10"
+                    data-decimals="0" data-suffix="RB+">0RB+</div>
+                <div class="text-on-surface-variant font-label-bold text-xs uppercase tracking-widest">Terjual (Travel
+                    Size)</div>
+            </div>
+            <div class="reveal" style="transition-delay: 200ms;">
+                <div class="counter text-accent-gold font-display-lg text-headline-md mb-1" data-target="21"
+                    data-decimals="0" data-suffix="">0</div>
+                <div class="text-on-surface-variant font-label-bold text-xs uppercase tracking-widest">Varian Produk
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 4. BEST SELLERS (data asli) -->
+    <section class="relative bg-surface-dim scroll-mt-24 overflow-hidden" id="best-sellers">
+        <!-- Fixed-height standalone gallery container -->
+        <div class="relative w-full flex flex-col justify-center items-center" style="height: 80vh; min-height: 520px;">
+
+            <!-- Section Header absolute floating at the top -->
+            <div class="absolute top-12 left-0 right-0 text-center px-gutter z-20 pointer-events-none">
+                <span class="text-accent-gold font-label-bold text-xs uppercase tracking-[0.3em] gold-underline">Curated Selection</span>
+                <h2 class="font-display-lg text-headline-md mt-4 text-white">Best Sellers</h2>
+                <p class="text-on-surface-variant text-xs mt-2">Scroll / drag to rotate the gallery</p>
+            </div>
+
+            <!-- WebGL Canvas Container -->
+            <div id="circular-gallery-canvas" class="absolute inset-0 w-full h-full z-0 overflow-hidden" style="cursor: grab;">
+                <!-- OGL canvas will be injected here -->
+            </div>
+
+            <!-- Quick navigation / footer link floating at the bottom -->
+            <div class="absolute bottom-8 left-0 right-0 text-center z-20">
+                <a class="inline-flex items-center gap-2 text-on-surface-variant hover:text-accent-gold transition-colors font-label-bold text-sm bg-surface-container-low/60 backdrop-blur px-6 py-2 rounded-full border border-outline-variant/30"
+                    href="#scent-library">
+                    Lihat Semua Koleksi <span class="material-symbols-outlined text-sm">chevron_right</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- 5. STORYTELLING -->
+    <section class="relative bg-surface py-section-padding-desktop overflow-hidden scroll-mt-24" id="brand-story">
+        <div class="absolute right-0 top-0 w-1/3 h-full bg-primary-container/20 -skew-x-12 translate-x-1/2"></div>
+        <div class="px-gutter max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
+            <div class="relative order-2 md:order-1 reveal">
+                <!-- Foto Pertama -->
+                <div class="w-3/4 border border-outline-variant p-2 rounded-2xl relative z-10">
+                    <div class="relative aspect-[4/5] rounded-xl shadow-2xl overflow-hidden bg-surface-container-high">
+                        <!-- GANTI src DI BAWAH INI DENGAN FOTO TOKO OFFLINE GOWWEE -->
+                        <img src="Foto Toko.png" alt="Foto toko offline GOWWEE 1 - GANTI DENGAN FOTO ASLI"
+                            class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Foto Kedua (Tambahan) -->
+                <div class="absolute top-1/4 -right-4 w-2/3 border border-outline-variant p-2 rounded-2xl z-20 reveal"
+                    style="transition-delay: 200ms;">
+                    <div class="relative aspect-square rounded-xl shadow-2xl overflow-hidden bg-surface-container-high">
+                        <!-- GANTI src DI BAWAH INI DENGAN FOTO TOKO OFFLINE GOWWEE KE-2 -->
+                        <img src="toko2.png" alt="Foto toko offline GOWWEE 2 - GANTI DENGAN FOTO ASLI"
+                            class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+                <!-- Badge UMKM -->
+                <div class="absolute -bottom-10 -right-10 bg-accent-gold text-surface p-10 rounded-2xl hidden lg:block reveal z-30"
+                    style="transition-delay: 400ms;">
+                    <div class="font-display-lg text-4xl italic">UMKM</div>
+                    <div class="font-label-bold text-xs uppercase tracking-widest mt-2">Made With Pride, Surabaya</div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2 space-y-8 reveal">
+                <span class="text-accent-gold font-label-bold text-xs uppercase tracking-[0.3em] gold-underline">Our
+                    Legacy</span>
+                <h2 class="font-display-lg text-headline-md leading-tight">A Symphony of <br><span class="italic">Rare
+                        Botanicals</span></h2>
+                <p class="text-on-surface-variant font-body-lg text-body-lg">
+                    Setiap botol GOWWEE diracik dengan cermat sebagai karya seni penciuman. Kami memilih bahan-bahan
+                    berkualitas untuk menghadirkan aroma yang berkarakter dan tahan lama, langsung dari Surabaya untuk
+                    seluruh Indonesia.
+                </p>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-accent-gold mt-1">verified</span>
+                        <div>
+                            <h4 class="font-label-bold text-on-surface">100% Original</h4>
+                            <p class="text-sm text-on-surface-variant">Extrait de Parfum dengan konsentrasi tinggi untuk
+                                daya tahan wangi maksimal.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <span class="material-symbols-outlined text-accent-gold mt-1">auto_awesome</span>
+                        <div>
+                            <h4 class="font-label-bold text-on-surface">Packing Aman</h4>
+                            <p class="text-sm text-on-surface-variant">Setiap pesanan dikemas rapi dan aman sebelum
+                                dikirim ke seluruh Indonesia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 6. KOLEKSI AROMA (grid dengan filter kategori, data asli) -->
+    <section class="py-section-padding-desktop bg-surface-container-lowest scroll-mt-24" id="scent-library">
+        <div class="px-gutter max-w-container-max-width mx-auto">
+            <div class="text-center mb-16 reveal">
+                <span class="text-accent-gold font-label-bold text-xs uppercase tracking-[0.3em] gold-underline">Koleksi
+                    Aroma</span>
+                <h2 class="font-display-lg text-headline-md mt-4 mb-4">Explore the Scent Library</h2>
+                <p class="text-on-surface-variant max-w-xl mx-auto mb-8">Temukan aroma yang paling menggambarkan dirimu
+                    dari 21 varian GOWWEE. Klik kategori untuk memfilter.</p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <button class="filter-btn is-active px-6 py-2 rounded-full font-label-bold text-sm transition-all"
+                        data-filter="all">Semua</button>
+                    <button
+                        class="filter-btn px-6 py-2 rounded-full font-label-bold text-sm hover:border-accent-gold hover:text-accent-gold transition-all"
+                        data-filter="floral">Floral</button>
+                    <button
+                        class="filter-btn px-6 py-2 rounded-full font-label-bold text-sm hover:border-accent-gold hover:text-accent-gold transition-all"
+                        data-filter="fresh">Fresh</button>
+                    <button
+                        class="filter-btn px-6 py-2 rounded-full font-label-bold text-sm hover:border-accent-gold hover:text-accent-gold transition-all"
+                        data-filter="woody">Woody</button>
+                    <button
+                        class="filter-btn px-6 py-2 rounded-full font-label-bold text-sm hover:border-accent-gold hover:text-accent-gold transition-all"
+                        data-filter="oriental">Oriental</button>
+                    <button
+                        class="filter-btn px-6 py-2 rounded-full font-label-bold text-sm hover:border-accent-gold hover:text-accent-gold transition-all"
+                        data-filter="musky">Musky</button>
+                    <button
+                        class="filter-btn px-6 py-2 rounded-full font-label-bold text-sm hover:border-accent-gold hover:text-accent-gold transition-all"
+                        data-filter="citrus">Citrus</button>
+                    <button
+                        class="filter-btn px-6 py-2 rounded-full font-label-bold text-sm hover:border-accent-gold hover:text-accent-gold transition-all"
+                        data-filter="spicy">Spicy</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6" id="scent-grid">
+
+                <div class="scent-card group bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-accent-gold/50 transition-all reveal"
+                    data-category="floral">
+                    <div class="relative aspect-[3/4] bg-surface-container-high overflow-hidden">
+                        <!-- GANTI src DI BAWAH INI DENGAN FOTO ASLI PRODUK: Bloom -->
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMzc1IiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjM3NSI+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImJnR3JhZCIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgo8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjM2IyYjI5Ii8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFjMTAwZiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzc1IiBmaWxsPSJ1cmwoI2JnR3JhZCkiLz4KPGcgb3BhY2l0eT0iMC41NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRjVCNDAwIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CjxyZWN0IHg9IjEyNyIgeT0iMTUwIiB3aWR0aD0iNDYiIGhlaWdodD0iOTAiIHJ4PSI3Ii8+CjxyZWN0IHg9IjEzNiIgeT0iMTIyIiB3aWR0aD0iMjgiIGhlaWdodD0iMzAiIHJ4PSI0Ii8+CjxyZWN0IHg9IjE0MSIgeT0iMTA4IiB3aWR0aD0iMTgiIGhlaWdodD0iMTYiIHJ4PSIzIi8+CjxsaW5lIHgxPSIxMjciIHkxPSIxNzgiIHgyPSIxNzMiIHkyPSIxNzgiLz4KPC9nPgo8dGV4dCB4PSIxNTAiIHk9IjI3MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiNjOWE4YTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGxldHRlci1zcGFjaW5nPSIyIj5GT1RPIFBST0RVSzwvdGV4dD4KPHRleHQgeD0iMTUwIiB5PSIyODgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjkiIGZpbGw9IiM4YTZmNmMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGxldHRlci1zcGFjaW5nPSIxIj5HYW50aSBzcmMgZ2FtYmFyIGluaTwvdGV4dD4KPC9zdmc+"
+                            alt="Foto produk Bloom - GANTI DENGAN FOTO ASLI"
+                            class="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-700">
+                        <span
+                            class="absolute top-3 left-3 px-3 py-1 bg-surface/80 backdrop-blur text-accent-gold font-label-bold text-[10px] rounded-full uppercase border border-accent-gold/30">Floral</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-headline-md text-lg mb-1">Bloom</h4>
+                        <p class="text-sm text-on-surface-variant mb-3 line-clamp-2">Aroma bunga yang mekar sempurna,
+                            memberikan kesan feminin dan anggun sepanjang hari.</p>
+                        <div class="font-bold text-accent-gold">Rp 80.000</div>
+                    </div>
+                </div>
+                <div class="scent-card group bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-accent-gold/50 transition-all reveal"
+                    data-category="floral" style="transition-delay: 60ms;">
+                    <div class="relative aspect-[3/4] bg-surface-container-high overflow-hidden">
+                        <!-- GANTI src DI BAWAH INI DENGAN FOTO ASLI PRODUK: Only Her -->
+                        <img src="OnlyHer.png" alt="Foto produk Only Her - GANTI DENGAN FOTO ASLI"
+                            class="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-700">
+                        <span
+                            class="absolute top-3 left-3 px-3 py-1 bg-surface/80 backdrop-blur text-accent-gold font-label-bold text-[10px] rounded-full uppercase border border-accent-gold/30">Floral</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-headline-md text-lg mb-1">Only Her</h4>
+                        <p class="text-sm text-on-surface-variant mb-3 line-clamp-2">Wangi eksklusif yang memancarkan
+                            pesona wanita elegan dan memikat hati.</p>
+                        <div class="font-bold text-accent-gold">Rp 80.000</div>
+                    </div>
+                </div>
+                <div class="scent-card group bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-accent-gold/50 transition-all reveal"
+                    data-category="floral" style="transition-delay: 120ms;">
+                    <div class="relative aspect-[3/4] bg-surface-container-high overflow-hidden">
+                        <!-- GANTI src DI BAWAH INI DENGAN FOTO ASLI PRODUK: Gorgeous -->
+                        <img src="Gorgeous.png" alt="Foto produk Gorgeous - GANTI DENGAN FOTO ASLI"
+                            class="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-700">
+                        <span
+                            class="absolute top-3 left-3 px-3 py-1 bg-surface/80 backdrop-blur text-accent-gold font-label-bold text-[10px] rounded-full uppercase border border-accent-gold/30">Floral</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-headline-md text-lg mb-1">Gorgeous</h4>
+                        <p class="text-sm text-on-surface-variant mb-3 line-clamp-2">Tampil memukau setiap saat dengan
+                            sentuhan wangi floral yang mewah dan modern.</p>
+                        <div class="font-bold text-accent-gold">Rp 80.000</div>
+                    </div>
+                </div>
+                <div class="scent-card group bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-accent-gold/50 transition-all reveal"
+                    data-category="fresh" style="transition-delay: 180ms;">
+                    <div class="relative aspect-[3/4] bg-surface-container-high overflow-hidden">
+                        <!-- GANTI src DI BAWAH INI DENGAN FOTO ASLI PRODUK: Anteros -->
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMzc1IiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjM3NSI+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImJnR3JhZCIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgo8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjM2IyYjI5Ii8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFjMTAwZiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzc1IiBmaWxsPSJ1cmwoI2JnR3JhZCkiLz4KPGcgb3BhY2l0eT0iMC41NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRjVCNDAwIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CjxyZWN0IHg9IjEyNyIgeT0iMTUwIiB3aWR0aD0iNDYiIGhlaWdodD0iOTAiIHJ4PSI3Ii8+CjxyZWN0IHg9IjEzNiIgeT0iMTIyIiB3aWR0aD0iMjgiIGhlaWdodD0iMzAiIHJ4PSI0Ii8+CjxyZWN0IHg9IjE0MSIgeT0iMTA4IiB3aWR0aD0iMTgiIGhlaWdodD0iMTYiIHJ4PSIzIi8+CjxsaW5lIHgxPSIxMjciIHkxPSIxNzgiIHgyPSIxNzMiIHkyPSIxNzgiLz4KPC9nPgo8dGV4dCB4PSIxNTAiIHk9IjI3MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiNjOWE4YTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGxldHRlci1zcGFjaW5nPSIyIj5GT1RPIFBST0RVSzwvdGV4dD4KPHRleHQgeD0iMTUwIiB5PSIyODgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjkiIGZpbGw9IiM4YTZmNmMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGxldHRlci1zcGFjaW5nPSIxIj5HYW50aSBzcmMgZ2FtYmFyIGluaTwvdGV4dD4KPC9zdmc+"
+                            alt="Foto produk Anteros - GANTI DENGAN FOTO ASLI"
+                            class="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-700">
+                        <span
+                            class="absolute top-3 left-3 px-3 py-1 bg-surface/80 backdrop-blur text-accent-gold font-label-bold text-[10px] rounded-full uppercase border border-accent-gold/30">Fresh</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-headline-md text-lg mb-1">Anteros</h4>
+                        <p class="text-sm text-on-surface-variant mb-3 line-clamp-2">Kombinasi wangi segar dan maskulin,
+                            sempurna untuk hangout santai maupun olahraga.</p>
+                        <div class="font-bold text-accent-gold">Rp 100.000</div>
+                    </div>
+                </div>
+                <div class="scent-card group bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-accent-gold/50 transition-all reveal"
+                    data-category="fresh">
+                    <div class="relative aspect-[3/4] bg-surface-container-high overflow-hidden">
+                        <!-- GANTI src DI BAWAH INI DENGAN FOTO ASLI PRODUK: Sunset Tropic -->
+                        <img src="SunsetTropic.png" alt="Foto produk Sunset Tropic - GANTI DENGAN FOTO ASLI"
+                            class="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-700">
+                        <span
+                            class="absolute top-3 left-3 px-3 py-1 bg-surface/80 backdrop-blur text-accent-gold font-label-bold text-[10px] rounded-full uppercase border border-accent-gold/30">Fresh</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-headline-md text-lg mb-1">Sunset Tropic</h4>
+                        <p class="text-sm text-on-surface-variant mb-3 line-clamp-2">Nikmati sensasi liburan tropis
+                            setiap hari dengan keharuman segar dan eksotis.</p>
+                        <div class="font-bold text-accent-gold">Rp 80.000</div>
+                    </div>
+                </div>
+                <div class="scent-card group bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-accent-gold/50 transition-all reveal"
+                    data-category="fresh" style="transition-delay: 60ms;">
+                    <div class="relative aspect-[3/4] bg-surface-container-high overflow-hidden">
+                        <!-- GANTI src DI BAWAH INI DENGAN FOTO ASLI PRODUK: Lucky -->
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMzc1IiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjM3NSI+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImJnR3JhZCIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgo8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjM2IyYjI5Ii8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFjMTAwZiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzc1IiBmaWxsPSJ1cmwoI2JnR3JhZCkiLz4KPGcgb3BhY2l0eT0iMC41NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRjVCNDAwIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CjxyZWN0IHg9IjEyNyIgeT0iMTUwIiB3aWR0aD0iNDYiIGhlaWdodD0iOTAiIHJ4PSI3Ii8+CjxyZWN0IHg9IjEzNiIgeT0iMTIyIiB3aWR0aD0iMjgiIGhlaWdodD0iMzAiIHJ4PSI0Ii8+CjxyZWN0IHg9IjE0MSIgeT0iMTA4IiB3aWR0aD0iMTgiIGhlaWdodD0iMTYiIHJ4PSIzIi8+CjxsaW5lIHgxPSIxMjciIHkxPSIxNzgiIHgyPSIxNzMiIHkyPSIxNzgiLz4KPC9nPgo8dGV4dCB4PSIxNTAiIHk9IjI3MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiNjOWE4YTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGxldHRlci1zcGFjaW5nPSIyIj5GT1RPIFBST0RVSzwvdGV4dD4KPHRleHQgeD0iMTUwIiB5PSIyODgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjkiIGZpbGw9IiM4YTZmNmMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGxldHRlci1zcGFjaW5nPSIxIj5HYW50aSBzcmMgZ2FtYmFyIGluaTwvdGV4dD4KPC9zdmc+"
+                            alt="Foto produk Lucky - GANTI DENGAN FOTO ASLI"
+                            class="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-700">
+                        <span
+                            class="absolute top-3 left-3 px-3 py-1 bg-surface/80 backdrop-blur text-accent-gold font-label-bold text-[10px] rounded-full uppercase border border-accent-gold/30">Fresh</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-headline-md text-lg mb-1">Lucky</h4>
+                        <p class="text-sm text-on-surface-variant mb-3 line-clamp-2">Sentuhan aroma fresh yang
+                            membangkitkan mood positif dan keberuntunganmu hari ini.</p>
+                        <div class="font-bold text-accent-gold">Rp 80.000</div>
+                    </div>
+                </div>
+                <div class="scent-card group bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-accent-gold/50 transition-all reveal"
+                    data-category="woody" style="transition-delay: 120ms;">
+                    <div class="relative aspect-[3/4] bg-surface-container-high overflow-hidden">
+                        <!-- GANTI src DI BAWAH INI DENGAN FOTO ASLI PRODUK: Johnny -->
+                        <img src="Johny.png" alt="Foto produk Johnny - GANTI DENGAN FOTO ASLI"
+                            class="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-700">
+                        <span
+                            class="absolute top-3 left-3 px-3 py-1 bg-surface/80 backdrop-blur text-accent-gold font-label-bold text-[10px] rounded-full uppercase border border-accent-gold/30">Woody</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-headline-md text-lg mb-1">Johnny</h4>
+                        <p class="text-sm text-on-surface-variant mb-3 line-clamp-2">Karakter kayu yang kuat dan berani,
+                            dirancang khusus untuk pria aktif dengan mobilitas tinggi.</p>
+                        <div class="font-bold text-accent-gold">Rp 160.000</div>
+                    </div>
+                </div>
+                <div class="scent-card group bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-accent-gold/50 transition-all reveal"
+                    data-category="woody" style="transition-delay: 180ms;">
+                    <div class="relative aspect-[3/4] bg-surface-container-high overflow-hidden">
+                        <!-- GANTI src DI BAWAH INI DENGAN FOTO ASLI PRODUK: Fernando -->
+                        <img src="Fernando.png" alt="Foto produk Fernando - GANTI DENGAN FOTO ASLI"
+                            class="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-700">
+                        <span
+                            class="absolute top-3 left-3 px-3 py-1 bg-surface/80 backdrop-blur text-accent-gold font-label-bold text-[10px] rounded-full uppercase border border-accent-gold/30">Woody</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-headline-md text-lg mb-1">Fernando</h4>
+                        <p class="text-sm text-on-surface-variant mb-3 line-clamp-2">Kesan pria mapan dan berwibawa
+                            tercermin dari wewangian woody yang klasik dan elegan.</p>
+                        <div class="font-bold text-accent-gold">Rp 160.000</div>
+                    </div>
+                </div>
+                <div class="scent-card group bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-accent-gold/50 transition-all reveal"
+                    data-category="woody">
+                    <div class="relative aspect-[3/4] bg-surface-container-high overflow-hidden">
+                        <!-- GANTI src DI BAWAH INI DENGAN FOTO ASLI PRODUK: Aventus -->
+                        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgMzc1IiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjM3NSI+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImJnR3JhZCIgeDE9IjAiIHkxPSIwIiB4Mj0iMCIgeTI9IjEiPgo8c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSIjM2IyYjI5Ii8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzFjMTAwZiIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+CjxyZWN0IHdpZHRoPSIzMDAiIGhlaWdodD0iMzc1IiBmaWxsPSJ1cmwoI2JnR3JhZCkiLz4KPGcgb3BhY2l0eT0iMC41NSIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRjVCNDAwIiBzdHJva2Utd2lkdGg9IjIuNSIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+CjxyZWN0IHg9IjEyNyIgeT0iMTUwIiB3aWR0aD0iNDYiIGhlaWdodD0iOTAiIHJ4PSI3Ii8+CjxyZWN0IHg9IjEzNiIgeT0iMTIyIiB3aWR0aD0iMjgiIGhlaWdodD0iMzAiIHJ4PSI0Ii8+CjxyZWN0IHg9IjE0MSIgeT0iMTA4IiB3aWR0aD0iMTgiIGhlaWdodD0iMTYiIHJ4PSIzIi8+CjxsaW5lIHgxPSIxMjciIHkxPSIxNzgiIHgyPSIxNzMiIHkyPSIxNzgiLz4KPC9nPgo8dGV4dCB4PSIxNTAiIHk9IjI3MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBIZWx2ZXRpY2EsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiNjOWE4YTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGxldHRlci1zcGFjaW5nPSIyIj5GT1RPIFBST0RVSzwvdGV4dD4KPHRleHQgeD0iMTUwIiB5PSIyODgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgSGVsdmV0aWNhLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjkiIGZpbGw9IiM4YTZmNmMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGxldHRlci1zcGFjaW5nPSIxIj5HYW50aSBzcmMgZ2FtYmFyIGluaTwvdGV4dD4KPC9zdmc+"
+                            alt="Foto produk Aventus - GANTI DENGAN FOTO ASLI"
+                            class="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-700">
+                        <span
+                            class="absolute top-3 left-3 px-3 py-1 bg-surface/80 backdrop-blur text-accent-gold font-label-bold text-[10px] rounded-full uppercase border border-accent-gold/30">Woody</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-headline-md text-lg mb-1">Aventus</h4>
+                        <p class="text-sm text-on-surface-variant mb-3 line-clamp-2">Wangi ikonis para pemimpin,
+                            memadukan ketegasan woody dengan kesegaran maskulin.</p>
+                        <div class="font-bold text-accent-gold">Rp 80.000</div>
+                    </div>
+                </div>
+                <div class="scent-card group bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-accent-gold/50 transition-all reveal"
+                    data-category="oriental" style="transition-delay: 60ms;">
+                    <div class="relative aspect-[3/4] bg-surface-container-high overflow-hidden">
+                        <!-- GANTI src DI BAWAH INI DENGAN FOTO ASLI PRODUK: Velvet Elixir -->
+                        <img src="VelvetElixir.png" alt="Foto produk Velvet Elixir - GANTI DENGAN FOTO ASLI"
+                            class="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-700">
+                        <span
+                            class="absolute top-3 left-3 px-3 py-1 bg-surface/80 backdrop-blur text-accent-gold font-label-bold text-[10px] rounded-full uppercase border border-accent-gold/30">Oriental</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-headline-md text-lg mb-1">Velvet Elixir</h4>
+                        <p class="text-sm text-on-surface-variant mb-3 line-clamp-2">Evolusi aroma yang lebih intens dan
+                            pekat, meninggalkan jejak kemewahan kemanapun kamu pergi.</p>
+                        <div class="font-bold text-accent-gold">Rp 80.000</div>
+                    </div>
+                </div>
+                <div class="scent-card group bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-accent-gold/50 transition-all reveal"
+                    data-category="oriental" style="transition-delay: 120ms;">
+                    <div class="relative aspect-[3/4] bg-surface-container-high overflow-hidden">
+                        <!-- GANTI src DI BAWAH INI DENGAN FOTO ASLI PRODUK: Sunset Rouge -->
+                        <img src="SunsetRogue.png" alt="Foto produk Sunset Rouge - GANTI DENGAN FOTO ASLI"
+                            class="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-700">
+                        <span
+                            class="absolute top-3 left-3 px-3 py-1 bg-surface/80 backdrop-blur text-accent-gold font-label-bold text-[10px] rounded-full uppercase border border-accent-gold/30">Oriental</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-headline-md text-lg mb-1">Sunset Rouge</h4>
+                        <p class="text-sm text-on-surface-variant mb-3 line-clamp-2">Aroma mewah dengan sentuhan manis
+                            dan hangat, cocok untuk menemani momen spesialmu.</p>
+                        <div class="font-bold text-accent-gold">Rp 80.000</div>
+                    </div>
+                </div>
+                <div class="scent-card group bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-accent-gold/50 transition-all reveal"
+                    data-category="musky" style="transition-delay: 180ms;">
+                    <div class="relative aspect-[3/4] bg-surface-container-high overflow-hidden">
+                        <!-- GANTI src DI BAWAH INI DENGAN FOTO ASLI PRODUK: After Midnight -->
+                        <img src="AfterMidnight.png" alt="Foto produk After Midnight - GANTI DENGAN FOTO ASLI"
+                            class="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-700">
+                        <span
+                            class="absolute top-3 left-3 px-3 py-1 bg-surface/80 backdrop-blur text-accent-gold font-label-bold text-[10px] rounded-full uppercase border border-accent-gold/30">Musky</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-headline-md text-lg mb-1">After Midnight</h4>
+                        <p class="text-sm text-on-surface-variant mb-3 line-clamp-2">Wangi malam yang menggoda,
+                            membungkusmu dalam aura misterius yang elegan.</p>
+                        <div class="font-bold text-accent-gold">Rp 80.000</div>
+                    </div>
+                </div>
+                <div class="scent-card group bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-accent-gold/50 transition-all reveal"
+                    data-category="citrus">
+                    <div class="relative aspect-[3/4] bg-surface-container-high overflow-hidden">
+                        <!-- GANTI src DI BAWAH INI DENGAN FOTO ASLI PRODUK: Sunshine -->
+                        <img src="Sunshine.png" alt="Foto produk Sunshine - GANTI DENGAN FOTO ASLI"
+                            class="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-700">
+                        <span
+                            class="absolute top-3 left-3 px-3 py-1 bg-surface/80 backdrop-blur text-accent-gold font-label-bold text-[10px] rounded-full uppercase border border-accent-gold/30">Citrus</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-headline-md text-lg mb-1">Sunshine</h4>
+                        <p class="text-sm text-on-surface-variant mb-3 line-clamp-2">Pancarkan energi positif dengan
+                            percikan aroma citrus yang ceria seperti sinar matahari pagi.</p>
+                        <div class="font-bold text-accent-gold">Rp 80.000</div>
+                    </div>
+                </div>
+                <div class="scent-card group bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/20 hover:border-accent-gold/50 transition-all reveal"
+                    data-category="spicy" style="transition-delay: 60ms;">
+                    <div class="relative aspect-[3/4] bg-surface-container-high overflow-hidden">
+                        <!-- GANTI src DI BAWAH INI DENGAN FOTO ASLI PRODUK: Shocked -->
+                        <img src="Shocked.png" alt="Foto produk Shocked - GANTI DENGAN FOTO ASLI"
+                            class="w-full h-full object-contain p-5 group-hover:scale-105 transition-transform duration-700">
+                        <span
+                            class="absolute top-3 left-3 px-3 py-1 bg-surface/80 backdrop-blur text-accent-gold font-label-bold text-[10px] rounded-full uppercase border border-accent-gold/30">Spicy</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-headline-md text-lg mb-1">Shocked</h4>
+                        <p class="text-sm text-on-surface-variant mb-3 line-clamp-2">Kejutan aroma rempah yang berani,
+                            meredefinisi gaya maskulin yang menantang.</p>
+                        <div class="font-bold text-accent-gold">Rp 152.000</div>
+                    </div>
+                </div>
+
+            </div>
+            <p id="empty-state" class="hidden text-center text-on-surface-variant mt-10">Belum ada varian di kategori
+                ini.</p>
+        </div>
+    </section>
+    <!-- 7. PROSES/RITUAL -->
+    <section class="py-section-padding-desktop bg-surface relative overflow-hidden">
+        <div class="px-gutter max-w-container-max-width mx-auto">
+            <div class="text-center mb-20 reveal">
+                <span class="text-accent-gold font-label-bold text-xs uppercase tracking-[0.3em] gold-underline">Our
+                    Process</span>
+                <h2 class="font-display-lg text-headline-md mt-4">The Alchemy of Fragrance</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16">
+                <div class="text-center reveal">
+                    <div class="font-promo-number text-promo-number text-accent-gold/10 leading-none mb-4">01</div>
+                    <h3 class="font-headline-md text-xl mb-4 uppercase tracking-widest">Selection</h3>
+                    <p class="text-on-surface-variant">Hanya bahan baku dengan standar aromatik terbaik yang kami pilih
+                        untuk tiap racikan.</p>
+                </div>
+                <div class="text-center reveal" style="transition-delay: 200ms;">
+                    <div class="font-promo-number text-promo-number text-accent-gold/10 leading-none mb-4">02</div>
+                    <h3 class="font-headline-md text-xl mb-4 uppercase tracking-widest">Extraction</h3>
+                    <p class="text-on-surface-variant">Diracik sebagai Extrait de Parfum dengan konsentrasi tinggi untuk
+                        daya tahan optimal.</p>
+                </div>
+                <div class="text-center reveal" style="transition-delay: 400ms;">
+                    <div class="font-promo-number text-promo-number text-accent-gold/10 leading-none mb-4">03</div>
+                    <h3 class="font-headline-md text-xl mb-4 uppercase tracking-widest">Quality</h3>
+                    <p class="text-on-surface-variant">Setiap batch melalui pengecekan kualitas sebelum dikemas dan
+                        dikirim ke pelangganmu.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 8. PAKET BUNDLING & PROMO (data asli) -->
+    <section class="py-section-padding-desktop bg-primary-container/20 scroll-mt-24" id="bundling-section">
+        <div class="px-gutter max-w-container-max-width mx-auto">
+            <div class="text-center mb-14 reveal">
+                <span class="text-accent-gold font-label-bold text-xs uppercase tracking-[0.3em] gold-underline">Bundle
+                    &amp; Save</span>
+                <h2 class="font-display-lg text-headline-md mt-4">Paket Bundling &amp; Promo</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+                <div
+                    class="bg-surface-container rounded-[2rem] overflow-hidden border border-outline-variant/30 reveal flex flex-col">
+                    <div class="relative aspect-[16/10] bg-surface-container-high overflow-hidden">
+                        <!-- GANTI src DI BAWAH INI DENGAN FOTO ASLI PAKET: Promo Bundling 4 Parfum -->
+                        <img src="Bundling%204%20Parfum.png"
+                            alt="Foto paket Promo Bundling 4 Parfum - GANTI DENGAN FOTO ASLI"
+                            class="w-full h-full object-cover">
+                        <span
+                            class="absolute top-4 left-4 px-3 py-1 bg-accent-gold text-black font-bold text-[10px] uppercase rounded">Paket
+                            Hemat</span>
+                    </div>
+                    <div class="p-8 md:p-10 flex flex-col flex-grow">
+                        <h3 class="font-display-lg text-2xl md:text-3xl mb-3">Promo Bundling 4 Parfum</h3>
+                        <p class="text-on-surface-variant mb-6 flex-grow">Koleksi wangi favorit dalam satu paket hemat.
+                            Bebas ganti aroma sesuai mood harimu!</p>
+                        <ul class="space-y-3 mb-6 text-sm text-on-surface-variant">
+                            <li class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-accent-gold text-base">check_circle</span> Isi
+                                4 parfum, aroma bebas dipilih</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-accent-gold text-base">check_circle</span>
+                                Ukuran botol per item sesuai ketersediaan*</li>
+                        </ul>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div class="text-2xl font-display-lg text-accent-gold">Rp 106.667</div>
+                            <button
+                                class="add-to-bag-btn px-8 py-3 bg-accent-gold text-black font-bold rounded-full hover:shadow-[0_0_20px_rgba(245,180,0,0.4)] hover:scale-105 transition-all">Add
+                                to Bag</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-surface-container rounded-[2rem] overflow-hidden border border-outline-variant/30 reveal flex flex-col"
+                    style="transition-delay: 150ms;">
+                    <div class="relative aspect-[16/10] bg-surface-container-high overflow-hidden">
+                        <!-- GANTI src DI BAWAH INI DENGAN FOTO ASLI PAKET: Bundling Couple Hemat -->
+                        <img src="Bundling%20Couple%20Hemat.png"
+                            alt="Foto paket Bundling Couple Hemat - GANTI DENGAN FOTO ASLI"
+                            class="w-full h-full object-cover">
+                        <span
+                            class="absolute top-4 left-4 px-3 py-1 bg-accent-gold text-black font-bold text-[10px] uppercase rounded">Untuk
+                            Pasangan</span>
+                    </div>
+                    <div class="p-8 md:p-10 flex flex-col flex-grow">
+                        <h3 class="font-display-lg text-2xl md:text-3xl mb-3">Bundling Couple Hemat</h3>
+                        <p class="text-on-surface-variant mb-6 flex-grow">Tampil serasi dengan pasangan menggunakan
+                            paket bundling parfum yang harmonis.</p>
+                        <ul class="space-y-3 mb-6 text-sm text-on-surface-variant">
+                            <li class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-accent-gold text-base">check_circle</span>
+                                Dapat 4 parfum dalam satu paket</li>
+                            <li class="flex items-center gap-2"><span
+                                    class="material-symbols-outlined text-accent-gold text-base">check_circle</span>
+                                Ukuran botol per item sesuai ketersediaan*</li>
+                        </ul>
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                            <div class="text-2xl font-display-lg text-accent-gold">Rp 160.000</div>
+                            <button
+                                class="add-to-bag-btn px-8 py-3 bg-accent-gold text-black font-bold rounded-full hover:shadow-[0_0_20px_rgba(245,180,0,0.4)] hover:scale-105 transition-all">Add
+                                to Bag</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <p class="text-center text-xs text-on-surface-variant/60 mt-8">*Ukuran botol per paket akan dikonfirmasi tim
+                kami melalui WhatsApp sebelum pesanan diproses.</p>
+        </div>
+    </section>
+    <!-- 9. TESTIMONI (carousel loop otomatis ke kanan) -->
+    <section class="py-section-padding-desktop bg-primary-container text-on-surface overflow-hidden">
+        <div class="max-w-container-max-width mx-auto text-center reveal px-gutter mb-16">
+            <h2 class="font-display-lg text-headline-md">Whispers of Acclaim</h2>
+        </div>
+        <div class="testimonial-marquee-wrap overflow-hidden">
+            <div class="testimonial-track flex gap-8 w-max">
+                <div
+                    class="testimonial-card flex-shrink-0 w-[280px] sm:w-[360px] bg-surface-container-low p-8 sm:p-10 rounded-2xl border border-outline-variant/20 italic text-center">
+                    <div class="text-accent-gold mb-4"><span class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-tagline text-lg mb-6 leading-relaxed">"Wangi poll padahal belum disemprot, udah
+                        pembelian kedua, bakal jadi langganan!"</p>
+                    <div class="font-label-bold text-xs uppercase tracking-widest text-on-surface">— Ulasan pelanggan
+                        Shopee</div>
+                </div>
+                <div
+                    class="testimonial-card flex-shrink-0 w-[280px] sm:w-[360px] bg-surface-container-low p-8 sm:p-10 rounded-2xl border border-outline-variant/20 italic text-center">
+                    <div class="text-accent-gold mb-4"><span class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-tagline text-lg mb-6 leading-relaxed">"Tahan lama, teksturnya cair dan enak. Aromanya
+                        lebih enak dari parfum merk lain yang pernah aku coba."</p>
+                    <div class="font-label-bold text-xs uppercase tracking-widest text-on-surface">— Ulasan pelanggan
+                        Shopee</div>
+                </div>
+                <div
+                    class="testimonial-card flex-shrink-0 w-[280px] sm:w-[360px] bg-surface-container-low p-8 sm:p-10 rounded-2xl border border-outline-variant/20 italic text-center">
+                    <div class="text-accent-gold mb-4"><span class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-tagline text-lg mb-6 leading-relaxed">"Kualitasnya bau-nya mirip banget sama yang aku
+                        mau, tahan sampai 32 jam!"</p>
+                    <div class="font-label-bold text-xs uppercase tracking-widest text-on-surface">— Ulasan pelanggan
+                        Shopee</div>
+                </div>
+                <div class="testimonial-card flex-shrink-0 w-[280px] sm:w-[360px] bg-surface-container-low p-8 sm:p-10 rounded-2xl border border-outline-variant/20 italic text-center"
+                    aria-hidden="true">
+                    <div class="text-accent-gold mb-4"><span class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-tagline text-lg mb-6 leading-relaxed">"Wangi poll padahal belum disemprot, udah
+                        pembelian kedua, bakal jadi langganan!"</p>
+                    <div class="font-label-bold text-xs uppercase tracking-widest text-on-surface">— Ulasan pelanggan
+                        Shopee</div>
+                </div>
+                <div class="testimonial-card flex-shrink-0 w-[280px] sm:w-[360px] bg-surface-container-low p-8 sm:p-10 rounded-2xl border border-outline-variant/20 italic text-center"
+                    aria-hidden="true">
+                    <div class="text-accent-gold mb-4"><span class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-tagline text-lg mb-6 leading-relaxed">"Tahan lama, teksturnya cair dan enak. Aromanya
+                        lebih enak dari parfum merk lain yang pernah aku coba."</p>
+                    <div class="font-label-bold text-xs uppercase tracking-widest text-on-surface">— Ulasan pelanggan
+                        Shopee</div>
+                </div>
+                <div class="testimonial-card flex-shrink-0 w-[280px] sm:w-[360px] bg-surface-container-low p-8 sm:p-10 rounded-2xl border border-outline-variant/20 italic text-center"
+                    aria-hidden="true">
+                    <div class="text-accent-gold mb-4"><span class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined"
+                            style="font-variation-settings: 'FILL' 1;">star</span><span
+                            class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+                    </div>
+                    <p class="font-tagline text-lg mb-6 leading-relaxed">"Kualitasnya bau-nya mirip banget sama yang aku
+                        mau, tahan sampai 32 jam!"</p>
+                    <div class="font-label-bold text-xs uppercase tracking-widest text-on-surface">— Ulasan pelanggan
+                        Shopee</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- 10. FAQ (accordion berfungsi) -->
+    <section class="py-section-padding-desktop bg-surface-dim">
+        <div
+            class="px-gutter max-w-container-max-width mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start reveal">
+            <div>
+                <h2 class="font-display-lg text-headline-md mb-6">Common Inquiries</h2>
+                <p class="text-on-surface-variant max-w-md">Temukan jawaban seputar pengiriman, daya tahan aroma, dan
+                    sertifikasi produk kami. Butuh bantuan lebih lanjut? Chat kami via WhatsApp.</p>
+            </div>
+            <div class="space-y-2" id="faq-list">
+
+                <div class="border-b border-outline-variant/30">
+                    <button class="faq-toggle w-full flex justify-between items-center py-4 text-left"
+                        aria-expanded="false">
+                        <h4 class="font-headline-md text-lg text-on-surface transition-colors">Apakah produk GOWWEE
+                            sudah bersertifikat BPOM?</h4>
+                        <span class="material-symbols-outlined faq-icon flex-shrink-0 ml-4">add</span>
+                    </button>
+                    <div class="faq-answer hidden pb-4 text-on-surface-variant">Ya, seluruh produk GOWWEE telah melalui
+                        proses sertifikasi BPOM untuk menjamin keamanan dan kualitas.</div>
+                </div>
+
+                <div class="border-b border-outline-variant/30">
+                    <button class="faq-toggle w-full flex justify-between items-center py-4 text-left"
+                        aria-expanded="false">
+                        <h4 class="font-headline-md text-lg text-on-surface transition-colors">Berapa lama aroma parfum
+                            bertahan?</h4>
+                        <span class="material-symbols-outlined faq-icon flex-shrink-0 ml-4">add</span>
+                    </button>
+                    <div class="faq-answer hidden pb-4 text-on-surface-variant">Sebagai Extrait de Parfum, aroma GOWWEE
+                        umumnya tahan cukup lama tergantung jenis kulit dan tingkat aktivitas — banyak pelanggan
+                        melaporkan daya tahan hingga belasan jam.</div>
+                </div>
+
+                <div class="border-b border-outline-variant/30">
+                    <button class="faq-toggle w-full flex justify-between items-center py-4 text-left"
+                        aria-expanded="false">
+                        <h4 class="font-headline-md text-lg text-on-surface transition-colors">Bagaimana kebijakan
+                            pengiriman dan pengembalian?</h4>
+                        <span class="material-symbols-outlined faq-icon flex-shrink-0 ml-4">add</span>
+                    </button>
+                    <div class="faq-answer hidden pb-4 text-on-surface-variant">Pengiriman tersedia ke seluruh
+                        Indonesia. Untuk kebijakan retur/komplain produk cacat, silakan hubungi kami langsung via
+                        WhatsApp agar bisa dibantu sesuai kondisi pesanan. <em>(Kebijakan detail perlu dikonfirmasi
+                            owner sebelum tayang.)</em></div>
+                </div>
+
+                <div class="border-b border-outline-variant/30">
+                    <button class="faq-toggle w-full flex justify-between items-center py-4 text-left"
+                        aria-expanded="false">
+                        <h4 class="font-headline-md text-lg text-on-surface transition-colors">Bisakah pesan dalam
+                            jumlah besar untuk hampers/acara?</h4>
+                        <span class="material-symbols-outlined faq-icon flex-shrink-0 ml-4">add</span>
+                    </button>
+                    <div class="faq-answer hidden pb-4 text-on-surface-variant">Bisa. Hubungi kami via WhatsApp untuk
+                        penawaran khusus pemesanan dalam jumlah besar, hampers, atau souvenir acara.</div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- 11. FOOTER -->
+    <footer class="bg-surface-container-lowest pt-20 scroll-mt-24" id="footer-section">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 px-gutter max-w-container-max-width mx-auto pb-20">
+            <div class="col-span-1 md:col-span-1">
+                <div class="font-display-lg text-headline-md text-accent-gold mb-6 uppercase tracking-widest cursor-pointer"
+                    onclick="window.scrollTo({top: 0, behavior: 'smooth'})">GOWWEE</div>
+                <p class="text-on-surface-variant font-body-md leading-relaxed mb-6">Parfum lokal UMKM asal Surabaya
+                    dengan 21 varian aroma pilihan — Extrait de Parfum, 100% original.</p>
+                <div class="flex gap-4">
+                    <a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center hover:bg-accent-gold hover:text-black hover:border-accent-gold transition-all duration-300"
+                        href="https://www.instagram.com/gowweeparfum/?hl=en" target="_blank" rel="noopener"
+                        title="Instagram"><span class="material-symbols-outlined text-sm">photo_camera</span></a>
+                    <a class="w-10 h-10 rounded-full border border-outline flex items-center justify-center hover:bg-accent-gold hover:text-black hover:border-accent-gold transition-all duration-300"
+                        href="https://wa.me/6285645464797" target="_blank" rel="noopener" title="WhatsApp"><span
+                            class="material-symbols-outlined text-sm">chat</span></a>
+
+                </div>
+            </div>
+            <div>
+                <h4 class="text-on-surface font-label-bold text-sm uppercase tracking-widest mb-8">Kontak</h4>
+                <ul class="space-y-4 text-on-surface-variant">
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-accent-gold text-sm mt-1">location_on</span>
+                        <a href="https://www.google.co.id/maps?q=Jl.+KH+Mas+Mansyur+No.64,+Ampel,+Kec.+Semampir,+Surabaya,+Jawa+Timur+60152"
+                            target="_blank" rel="noopener" class="hover:text-accent-gold transition-colors">Jl. KH Mas
+                            Mansyur No.64, Ampel, Kec. Semampir, Surabaya, Jawa Timur 60152</a>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-accent-gold text-sm mt-1">call</span>
+                        <a href="https://wa.me/6285645464797" target="_blank" rel="noopener"
+                            class="hover:text-accent-gold transition-colors">WhatsApp: 0856-4546-4797</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-on-surface font-label-bold text-sm uppercase tracking-widest mb-8">Quick Links</h4>
+                <ul class="space-y-4 text-on-surface-variant">
+                    <li><a class="hover:text-accent-gold transition-colors" href="#brand-story">Our Story</a></li>
+                    <li><a class="hover:text-accent-gold transition-colors" href="#scent-library">Koleksi Aroma</a></li>
+                    <li><a class="hover:text-accent-gold transition-colors" href="#bundling-section">Paket Bundling</a>
+                    </li>
+                    <li><a class="hover:text-accent-gold transition-colors" href="#best-sellers">Best Sellers</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-on-surface font-label-bold text-sm uppercase tracking-widest mb-8">Marketplace</h4>
+                <div class="space-y-4">
+                    <a class="flex items-center justify-between p-4 bg-surface rounded-xl border border-outline-variant hover:border-accent-gold transition-all group"
+                        href="https://shopee.co.id/gowweeperfumes?categoryId=100630&entryPoint=ShopByPDP&itemId=6309478671&upstream=search"
+                        target="_blank" rel="noopener">
+                        <span class="text-on-surface group-hover:text-accent-gold">Shop on Shopee</span>
+                        <span class="material-symbols-outlined text-sm">open_in_new</span>
+                    </a>
+                    <a class="flex items-center justify-between p-4 bg-surface rounded-xl border border-outline-variant hover:border-accent-gold transition-all group"
+                        href="https://www.instagram.com/gowweeparfum/?hl=en" target="_blank" rel="noopener">
+                        <span class="text-on-surface group-hover:text-accent-gold">Visit Instagram</span>
+                        <span class="material-symbols-outlined text-sm">open_in_new</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="bg-surface py-8 border-t border-outline-variant/30 text-center">
+            <p class="text-on-surface-variant text-xs font-label-bold uppercase tracking-widest opacity-60">© 2026
+                GOWWEE Fragrance. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div id="toast"
+        class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-accent-gold text-black px-6 py-3 rounded-full font-label-bold text-sm shadow-xl opacity-0 pointer-events-none z-[60]">
+        Ditambahkan ke keranjang</div>
+
+    <a href="https://wa.me/6285645464797" target="_blank" rel="noopener" title="Chat WhatsApp GOWWEE"
+        class="fixed bottom-6 right-6 z-50 w-14 h-14 md:w-16 md:h-16 flex items-center justify-center group">
+        <span class="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-40"></span>
+        <span
+            class="relative w-full h-full bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform duration-300">
+            <span class="material-symbols-outlined text-white text-3xl"
+                style="font-variation-settings: 'FILL' 1;">chat</span>
+        </span>
+    </a>
+
+    <script>
+        // Reveal on scroll - dua arah (muncul saat masuk viewport, reset saat keluar viewport,
+        // jadi animasinya kepicu ulang baik pas scroll ke bawah maupun scroll ke atas)
+        const reveals = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            const revealPoint = 150;
+            reveals.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                // Muncul saat di-scroll ke bawah. Tidak dihilangkan jika elemen sudah lewat di atas layar.
+                if (rect.top < windowHeight - revealPoint) {
+                    element.classList.add('active');
+                } else {
+                    element.classList.remove('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Counter angka (Trust Bar) - menghitung naik
+        function animateCounter(el) {
+            const target = parseFloat(el.dataset.target);
+            const decimals = parseInt(el.dataset.decimals || '0', 10);
+            const suffix = el.dataset.suffix || '';
+            const duration = 2000; // sedikit diperlama agar lebih terlihat
+            const startTime = performance.now();
+            
+            // Hentikan animasi sebelumnya jika ada
+            if (el.animationFrameId) {
+                cancelAnimationFrame(el.animationFrameId);
+            }
+            
+            function step(now) {
+                const progress = Math.min((now - startTime) / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                const current = target * eased;
+                el.textContent = current.toFixed(decimals) + suffix;
+                if (progress < 1) {
+                    el.animationFrameId = requestAnimationFrame(step);
+                } else {
+                    el.textContent = target.toFixed(decimals) + suffix;
+                }
+            }
+            el.animationFrameId = requestAnimationFrame(step);
+        }
+
+        const counterEls = document.querySelectorAll('.counter');
+        if ('IntersectionObserver' in window && counterEls.length) {
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(entry.target);
+                    } else {
+                        // Reset ke 0 saat keluar dari layar agar animasi bisa diulang
+                        const decimals = parseInt(entry.target.dataset.decimals || '0', 10);
+                        const suffix = entry.target.dataset.suffix || '';
+                        entry.target.textContent = (0).toFixed(decimals) + suffix;
+                    }
+                });
+            }, { threshold: 0.2 }); // threshold dikecilkan agar lebih cepat terpicu
+            counterEls.forEach(el => counterObserver.observe(el));
+        } else {
+            counterEls.forEach(animateCounter);
+        }
+
+        // Navbar background on scroll
+        const navbar = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-[#5c0c0f]/40', 'shadow-xl');
+                navbar.classList.remove('bg-transparent');
+            } else {
+                navbar.classList.remove('bg-[#5c0c0f]/40', 'shadow-xl');
+                navbar.classList.add('bg-transparent');
+            }
+        });
+
+        // FAQ accordion (klik untuk buka/tutup, hanya 1 terbuka dalam satu waktu)
+        document.querySelectorAll('.faq-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const answer = btn.nextElementSibling;
+                const isOpen = btn.getAttribute('aria-expanded') === 'true';
+                document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+                document.querySelectorAll('.faq-toggle').forEach(b => {
+                    b.setAttribute('aria-expanded', 'false');
+                    b.querySelector('.faq-icon').textContent = 'add';
+                });
+                if (!isOpen) {
+                    answer.classList.remove('hidden');
+                    btn.setAttribute('aria-expanded', 'true');
+                    btn.querySelector('.faq-icon').textContent = 'remove';
+                }
+            });
+        });
+
+        // Filter kategori aroma
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const scentCards = document.querySelectorAll('.scent-card');
+        const emptyState = document.getElementById('empty-state');
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterButtons.forEach(b => b.classList.remove('is-active'));
+                btn.classList.add('is-active');
+                const filter = btn.dataset.filter;
+                let visibleCount = 0;
+                scentCards.forEach(card => {
+                    const match = filter === 'all' || card.dataset.category === filter;
+                    card.classList.toggle('hidden-card', !match);
+                    if (match) visibleCount++;
+                });
+                emptyState.classList.toggle('hidden', visibleCount > 0);
+
+                // Memicu pengecekan ulang elemen yang di-reveal setelah difilter
+                setTimeout(revealOnScroll, 100);
+            });
+        });
+
+        // Add to Bag -> tampilkan toast konfirmasi (demo, belum terhubung sistem pemesanan nyata)
+        const toast = document.getElementById('toast');
+        let toastTimer;
+        document.querySelectorAll('.add-to-bag-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                toast.style.opacity = '1';
+                toast.style.transform = 'translate(-50%, -8px)';
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(() => {
+                    toast.style.opacity = '0';
+                    toast.style.transform = 'translate(-50%, 0)';
+                }, 1800);
+            });
+        });
+    </script>
+
+    <!-- Typewriter Hero Title -->
+    <script>
+        (function () {
+            const phrases = [
+                "Timeless Elegance",
+                "Rare Botanicals",
+                "Luxurious Scents",
+                "Exquisite Fragrance",
+                "Endless Allure"
+            ];
+            const el = document.getElementById('typewriter-text');
+            if (!el) return;
+
+            let phraseIndex = 0;
+            let charIndex = 0;
+            let isDeleting = false;
+            const typeSpeed = 80;
+            const deleteSpeed = 45;
+            const pauseAfterType = 1800;
+            const pauseAfterDelete = 400;
+
+            function tick() {
+                const current = phrases[phraseIndex];
+
+                if (!isDeleting) {
+                    charIndex++;
+                    el.textContent = current.slice(0, charIndex);
+                    if (charIndex === current.length) {
+                        isDeleting = true;
+                        setTimeout(tick, pauseAfterType);
+                        return;
+                    }
+                    setTimeout(tick, typeSpeed);
+                } else {
+                    charIndex--;
+                    el.textContent = current.slice(0, charIndex);
+                    if (charIndex === 0) {
+                        isDeleting = false;
+                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                        setTimeout(tick, pauseAfterDelete);
+                        return;
+                    }
+                    setTimeout(tick, deleteSpeed);
+                }
+            }
+
+            tick();
+        })();
+    </script>
+
+    <!-- Custom Cursor -->
+    <script>
+        (function () {
+            const dot = document.getElementById('cursor-dot');
+            const ring = document.getElementById('cursor-ring');
+            if (!dot || !ring) return;
+
+            let mouseX = window.innerWidth / 2;
+            let mouseY = window.innerHeight / 2;
+            let ringX = mouseX;
+            let ringY = mouseY;
+
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+                dot.style.left = mouseX + 'px';
+                dot.style.top = mouseY + 'px';
+            });
+
+            const hoverTargets = 'a, button, [role="button"], label, input, textarea, select, .filter-btn, .add-to-bag-btn, .faq-toggle';
+            document.addEventListener('mouseover', (e) => {
+                if (e.target.closest(hoverTargets)) {
+                    document.body.classList.add('cursor-hover');
+                }
+            });
+            document.addEventListener('mouseout', (e) => {
+                if (e.target.closest(hoverTargets)) {
+                    document.body.classList.remove('cursor-hover');
+                }
+            });
+
+            (function animateRing() {
+                ringX += (mouseX - ringX) * 0.1;
+                ringY += (mouseY - ringY) * 0.1;
+                ring.style.left = ringX + 'px';
+                ring.style.top = ringY + 'px';
+                requestAnimationFrame(animateRing);
+            })();
+        })();
+    </script>
+
+    <!-- OGL 3D Circular Gallery Initialization -->
+    <script>
+        (function() {
+            // Check for both uppercase window.OGL and lowercase window.ogl (depending on CDN build exports)
+            const ogl = window.OGL || window.ogl;
+            
+            // Helper to extract font size from CSS font shorthand string
+            function getFontSize(fontStr) {
+                const match = fontStr.match(/(\d+)px/);
+                return match ? parseInt(match[1], 10) : 24;
+            }
+
+            // Helpers
+            function debounce(func, wait) {
+                let timeout;
+                return function (...args) {
+                    clearTimeout(timeout);
+                    timeout = setTimeout(() => func.apply(this, args), wait);
+                };
+            }
+
+            function lerp(p1, p2, t) {
+                return p1 + (p2 - p1) * t;
+            }
+
+            function autoBind(instance) {
+                const proto = Object.getPrototypeOf(instance);
+                Object.getOwnPropertyNames(proto).forEach((key) => {
+                    if (key !== 'constructor' && typeof instance[key] === 'function') {
+                        instance[key] = instance[key].bind(instance);
+                    }
+                });
+            }
+
+            // Creates a two-line texture on Canvas for WebGL rendering
+            function createTextTexture(gl, text, subtitle = "", font = "bold 28px 'Playfair Display', serif", subtitleFont = "16px 'Inter', sans-serif", color = "white", subtitleColor = "#F5B400") {
+                const canvas = document.createElement("canvas");
+                const context = canvas.getContext("2d");
+                if (!context) return null;
+                
+                context.font = font;
+                const mainMetrics = context.measureText(text);
+                const mainWidth = Math.ceil(mainMetrics.width);
+                const mainHeight = getFontSize(font);
+                
+                let subWidth = 0;
+                let subHeight = 0;
+                if (subtitle) {
+                    context.font = subtitleFont;
+                    const subMetrics = context.measureText(subtitle);
+                    subWidth = Math.ceil(subMetrics.width);
+                    subHeight = getFontSize(subtitleFont);
+                }
+                
+                const width = Math.max(mainWidth, subWidth) + 60;
+                const height = mainHeight + subHeight + (subtitle ? 30 : 20);
+                
+                canvas.width = width;
+                canvas.height = height;
+                
+                // Redraw on sized canvas
+                context.font = font;
+                context.fillStyle = color;
+                context.textBaseline = "top";
+                context.textAlign = "center";
+                context.clearRect(0, 0, width, height);
+                
+                // Render shadow for text readability in WebGL
+                context.shadowColor = "rgba(0, 0, 0, 0.7)";
+                context.shadowBlur = 4;
+                context.shadowOffsetX = 1;
+                context.shadowOffsetY = 1;
+                
+                const mainY = 8;
+                context.fillText(text, width / 2, mainY);
+                
+                if (subtitle) {
+                    context.font = subtitleFont;
+                    context.fillStyle = subtitleColor;
+                    context.fillText(subtitle, width / 2, mainY + mainHeight + 10);
+                }
+                
+                const texture = new ogl.Texture(gl, { generateMipmaps: false });
+                texture.image = canvas;
+                return { texture, width, height };
+            }
+
+            class Title {
+                constructor({ gl, plane, renderer, text, subtitle, textColor = "white", subtitleColor = "#F5B400", font = "bold 28px 'Playfair Display'", subtitleFont = "16px 'Inter'" }) {
+                    autoBind(this);
+                    this.gl = gl;
+                    this.plane = plane;
+                    this.renderer = renderer;
+                    this.text = text;
+                    this.subtitle = subtitle;
+                    this.textColor = textColor;
+                    this.subtitleColor = subtitleColor;
+                    this.font = font;
+                    this.subtitleFont = subtitleFont;
+                    this.createMesh();
+                }
+                createMesh() {
+                    const textureData = createTextTexture(
+                        this.gl,
+                        this.text,
+                        this.subtitle,
+                        this.font,
+                        this.subtitleFont,
+                        this.textColor,
+                        this.subtitleColor
+                    );
+                    if (!textureData) return;
+                    const { texture, width, height } = textureData;
+                    
+                    const geometry = new ogl.Plane(this.gl);
+                    const program = new ogl.Program(this.gl, {
+                        vertex: `
+                            attribute vec3 position;
+                            attribute vec2 uv;
+                            uniform mat4 modelViewMatrix;
+                            uniform mat4 projectionMatrix;
+                            varying vec2 vUv;
+                            void main() {
+                                vUv = uv;
+                                gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+                            }
+                        `,
+                        fragment: `
+                            precision highp float;
+                            uniform sampler2D tMap;
+                            varying vec2 vUv;
+                            void main() {
+                                vec4 color = texture2D(tMap, vUv);
+                                if (color.a < 0.1) discard;
+                                gl_FragColor = color;
+                            }
+                        `,
+                        uniforms: { tMap: { value: texture } },
+                        transparent: true
+                    });
+                    this.mesh = new ogl.Mesh(this.gl, { geometry, program });
+                    const aspect = width / height;
+                    const textHeight = this.plane.scale.y * 0.18;
+                    const textWidth = textHeight * aspect;
+                    this.mesh.scale.set(textWidth, textHeight, 1);
+                    this.mesh.position.y = -this.plane.scale.y * 0.5 - textHeight * 0.5 - 0.08;
+                    this.mesh.setParent(this.plane);
+                }
+            }
+
+            class Media {
+                constructor({
+                    geometry,
+                    gl,
+                    image,
+                    index,
+                    length,
+                    renderer,
+                    scene,
+                    screen,
+                    text,
+                    subtitle,
+                    viewport,
+                    bend,
+                    textColor,
+                    subtitleColor,
+                    borderRadius = 0,
+                    font,
+                    subtitleFont
+                }) {
+                    this.extra = 0;
+                    this.geometry = geometry;
+                    this.gl = gl;
+                    this.image = image;
+                    this.index = index;
+                    this.length = length;
+                    this.renderer = renderer;
+                    this.scene = scene;
+                    this.screen = screen;
+                    this.text = text;
+                    this.subtitle = subtitle;
+                    this.viewport = viewport;
+                    this.bend = bend;
+                    this.textColor = textColor;
+                    this.subtitleColor = subtitleColor;
+                    this.borderRadius = borderRadius;
+                    this.font = font;
+                    this.subtitleFont = subtitleFont;
+                    this.createShader();
+                    this.createMesh();
+                    this.createTitle();
+                    this.onResize();
+                }
+                createShader() {
+                    const texture = new ogl.Texture(this.gl, { generateMipmaps: false });
+                    this.program = new ogl.Program(this.gl, {
+                        depthTest: false,
+                        depthWrite: false,
+                        vertex: `
+                            precision highp float;
+                            attribute vec3 position;
+                            attribute vec2 uv;
+                            uniform mat4 modelViewMatrix;
+                            uniform mat4 projectionMatrix;
+                            uniform float uTime;
+                            uniform float uSpeed;
+                            varying vec2 vUv;
+                            void main() {
+                                vUv = uv;
+                                vec3 p = position;
+                                p.z = (sin(p.x * 4.0 + uTime) * 1.5 + cos(p.y * 2.0 + uTime) * 1.5) * (0.1 + uSpeed * 0.5);
+                                gl_Position = projectionMatrix * modelViewMatrix * vec4(p, 1.0);
+                            }
+                        `,
+                        fragment: `
+                            precision highp float;
+                            uniform vec2 uImageSizes;
+                            uniform vec2 uPlaneSizes;
+                            uniform sampler2D tMap;
+                            uniform float uBorderRadius;
+                            varying vec2 vUv;
+                            
+                            float roundedBoxSDF(vec2 p, vec2 b, float r) {
+                                vec2 d = abs(p) - b;
+                                return length(max(d, vec2(0.0))) + min(max(d.x, d.y), 0.0) - r;
+                            }
+                            
+                            void main() {
+                                // Prevent divide-by-zero if width or height is zero
+                                vec2 imgSizes = max(uImageSizes, vec2(1.0));
+                                vec2 planeSizes = max(uPlaneSizes, vec2(1.0));
+                                
+                                vec2 ratio = vec2(
+                                    min((planeSizes.x / planeSizes.y) / (imgSizes.x / imgSizes.y), 1.0),
+                                    min((planeSizes.y / planeSizes.x) / (imgSizes.y / imgSizes.x), 1.0)
+                                );
+                                vec2 uv = vec2(
+                                    vUv.x * ratio.x + (1.0 - ratio.x) * 0.5,
+                                    vUv.y * ratio.y + (1.0 - ratio.y) * 0.5
+                                );
+                                vec4 color = texture2D(tMap, uv);
+                                
+                                float d = roundedBoxSDF(vUv - 0.5, vec2(0.5 - uBorderRadius), uBorderRadius);
+                                if(d > 0.0) {
+                                    discard;
+                                }
+                                
+                                gl_FragColor = vec4(color.rgb, 1.0);
+                            }
+                        `,
+                        uniforms: {
+                            tMap: { value: texture },
+                            uPlaneSizes: { value: [1.0, 1.0] },
+                            uImageSizes: { value: [100.0, 100.0] },
+                            uSpeed: { value: 0 },
+                            uTime: { value: 100 * Math.random() },
+                            uBorderRadius: { value: this.borderRadius }
+                        },
+                        transparent: true
+                    });
+                    const img = new Image();
+                    if (this.image.startsWith('http') && !this.image.includes(window.location.host)) {
+                        img.crossOrigin = "anonymous";
+                    }
+                    img.src = this.image;
+                    img.onload = () => {
+                        texture.image = img;
+                        this.program.uniforms.uImageSizes.value = [img.naturalWidth, img.naturalHeight];
+                    };
+                }
+                createMesh() {
+                    this.plane = new ogl.Mesh(this.gl, {
+                        geometry: this.geometry,
+                        program: this.program
+                    });
+                    this.plane.setParent(this.scene);
+                }
+                createTitle() {
+                    this.title = new Title({
+                        gl: this.gl,
+                        plane: this.plane,
+                        renderer: this.renderer,
+                        text: this.text,
+                        subtitle: this.subtitle,
+                        textColor: this.textColor,
+                        subtitleColor: this.subtitleColor,
+                        font: this.font,
+                        subtitleFont: this.subtitleFont
+                    });
+                }
+                update(scroll, direction) {
+                    this.plane.position.x = this.x - scroll.current - this.extra;
+
+                    const x = this.plane.position.x;
+                    const H = this.viewport.width / 2;
+
+                    if (this.bend === 0) {
+                        this.plane.position.y = 0;
+                        this.plane.rotation.z = 0;
+                    } else {
+                        const B_abs = Math.abs(this.bend);
+                        const R = (H * H + B_abs * B_abs) / (2 * B_abs);
+                        const effectiveX = Math.min(Math.abs(x), H);
+
+                        const arc = R - Math.sqrt(R * R - effectiveX * effectiveX);
+                        if (this.bend > 0) {
+                            this.plane.position.y = -arc;
+                            this.plane.rotation.z = -Math.sign(x) * Math.asin(effectiveX / R);
+                        } else {
+                            this.plane.position.y = arc;
+                            this.plane.rotation.z = Math.sign(x) * Math.asin(effectiveX / R);
+                        }
+                    }
+
+                    this.speed = scroll.current - scroll.last;
+                    this.program.uniforms.uTime.value += 0.04;
+                    this.program.uniforms.uSpeed.value = this.speed;
+
+                    const planeOffset = this.plane.scale.x / 2;
+                    const viewportOffset = this.viewport.width / 2;
+                    this.isBefore = this.plane.position.x + planeOffset < -viewportOffset;
+                    this.isAfter = this.plane.position.x - planeOffset > viewportOffset;
+                    if (direction === 'right' && this.isBefore) {
+                        this.extra -= this.widthTotal;
+                        this.isBefore = this.isAfter = false;
+                    }
+                    if (direction === 'left' && this.isAfter) {
+                        this.extra += this.widthTotal;
+                        this.isBefore = this.isAfter = false;
+                    }
+                }
+                onResize({ screen, viewport } = {}) {
+                    if (screen) this.screen = screen;
+                    if (viewport) {
+                        this.viewport = viewport;
+                        if (this.plane.program.uniforms.uViewportSizes) {
+                            this.plane.program.uniforms.uViewportSizes.value = [this.viewport.width, this.viewport.height];
+                        }
+                    }
+                    this.scale = this.screen.height / 1500;
+                    if (this.screen.width < 768) {
+                        this.plane.scale.y = (this.viewport.height * (850 * this.scale)) / this.screen.height;
+                        this.plane.scale.x = (this.viewport.width * (600 * this.scale)) / this.screen.width;
+                        this.padding = 1.2;
+                    } else {
+                        this.plane.scale.y = (this.viewport.height * (900 * this.scale)) / this.screen.height;
+                        this.plane.scale.x = (this.viewport.width * (700 * this.scale)) / this.screen.width;
+                        this.padding = 2.0;
+                    }
+                    this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];
+                    this.width = this.plane.scale.x + this.padding;
+                    this.widthTotal = this.width * this.length;
+                    this.x = this.width * this.index;
+                }
+            }
+
+            class CircularGalleryApp {
+                constructor(container, { items, bend = 3, textColor = "white", subtitleColor = "#F5B400", borderRadius = 0.05, scrollEase = 0.05, font = "bold 28px 'Playfair Display'", subtitleFont = "16px 'Inter'" } = {}) {
+                    this.container = container;
+                    this.scroll = { ease: scrollEase, current: 0, target: 0, last: 0 };
+                    this.onCheckDebounce = debounce(this.onCheck, 200);
+                    this.createRenderer();
+                    this.createCamera();
+                    this.createScene();
+                    this.onResize();
+                    this.createGeometry();
+                    this.createMedias(items, bend, textColor, subtitleColor, borderRadius, font, subtitleFont);
+                    this.update();
+                    this.addEventListeners();
+                }
+                createRenderer() {
+                    this.renderer = new ogl.Renderer({ alpha: true, antialias: true });
+                    this.gl = this.renderer.gl;
+                    this.gl.clearColor(0, 0, 0, 0);
+                    this.container.appendChild(this.gl.canvas);
+                }
+                createCamera() {
+                    this.camera = new ogl.Camera(this.gl);
+                    this.camera.fov = 45;
+                    this.camera.position.z = 20;
+                }
+                createScene() {
+                    this.scene = new ogl.Transform();
+                }
+                createGeometry() {
+                    this.planeGeometry = new ogl.Plane(this.gl, {
+                        heightSegments: 50,
+                        widthSegments: 100
+                    });
+                }
+                createMedias(items, bend, textColor, subtitleColor, borderRadius, font, subtitleFont) {
+                    this.mediasImages = items.concat(items);
+                    this.medias = this.mediasImages.map((data, index) => {
+                        return new Media({
+                            geometry: this.planeGeometry,
+                            gl: this.gl,
+                            image: data.image,
+                            index,
+                            length: this.mediasImages.length,
+                            renderer: this.renderer,
+                            scene: this.scene,
+                            screen: this.screen,
+                            text: data.text,
+                            subtitle: data.subtitle,
+                            viewport: this.viewport,
+                            bend,
+                            textColor,
+                            subtitleColor,
+                            borderRadius,
+                            font,
+                            subtitleFont
+                        });
+                    });
+                }
+                onTouchDown(e) {
+                    this.isDown = true;
+                    this.startX = e.touches ? e.touches[0].clientX : e.clientX;
+                    this.container.style.cursor = 'grabbing';
+                }
+                onTouchMove(e) {
+                    if (!this.isDown) return;
+                    const x = e.touches ? e.touches[0].clientX : e.clientX;
+                    const dx = this.startX - x;
+                    this.scroll.target += dx * 0.4;
+                    this.startX = x;
+                }
+                onTouchUp() {
+                    this.isDown = false;
+                    this.container.style.cursor = 'grab';
+                }
+                onCheck() {}
+                onResize() {
+                    this.screen = {
+                        width: this.container.clientWidth,
+                        height: this.container.clientHeight
+                    };
+                    this.renderer.setSize(this.screen.width, this.screen.height);
+                    this.camera.perspective({
+                        aspect: this.screen.width / this.screen.height
+                    });
+                    const fov = (this.camera.fov * Math.PI) / 180;
+                    const height = 2 * Math.tan(fov / 2) * this.camera.position.z;
+                    const width = height * this.camera.aspect;
+                    this.viewport = { width, height };
+                    if (this.medias) {
+                        this.medias.forEach((media) =>
+                            media.onResize({ screen: this.screen, viewport: this.viewport })
+                        );
+                    }
+                }
+                update() {
+                    this.scroll.current = lerp(
+                        this.scroll.current,
+                        this.scroll.target,
+                        this.scroll.ease
+                    );
+                    const direction = this.scroll.current > this.scroll.last ? 'right' : 'left';
+                    if (this.medias) {
+                        this.medias.forEach((media) => media.update(this.scroll, direction));
+                    }
+                    this.renderer.render({ scene: this.scene, camera: this.camera });
+                    this.scroll.last = this.scroll.current;
+                    this.raf = window.requestAnimationFrame(this.update.bind(this));
+                }
+                addEventListeners() {
+                    this.boundOnResize = this.onResize.bind(this);
+                    this.boundOnTouchDown = this.onTouchDown.bind(this);
+                    this.boundOnTouchMove = this.onTouchMove.bind(this);
+                    this.boundOnTouchUp = this.onTouchUp.bind(this);
+
+                    window.addEventListener('resize', this.boundOnResize);
+
+                    this.container.addEventListener('mousedown', this.boundOnTouchDown);
+                    window.addEventListener('mousemove', this.boundOnTouchMove);
+                    window.addEventListener('mouseup', this.boundOnTouchUp);
+
+                    this.container.addEventListener('touchstart', this.boundOnTouchDown, { passive: true });
+                    window.addEventListener('touchmove', this.boundOnTouchMove, { passive: true });
+                    window.addEventListener('touchend', this.boundOnTouchUp);
+                }
+                destroy() {
+                    window.cancelAnimationFrame(this.raf);
+                    window.removeEventListener('resize', this.boundOnResize);
+                    this.container.removeEventListener('mousedown', this.boundOnTouchDown);
+                    window.removeEventListener('mousemove', this.boundOnTouchMove);
+                    window.removeEventListener('mouseup', this.boundOnTouchUp);
+                    this.container.removeEventListener('touchstart', this.boundOnTouchDown);
+                    window.removeEventListener('touchmove', this.boundOnTouchMove);
+                    window.removeEventListener('touchend', this.boundOnTouchUp);
+                    if (this.renderer && this.renderer.gl && this.renderer.gl.canvas.parentNode) {
+                        this.renderer.gl.canvas.parentNode.removeChild(this.renderer.gl.canvas);
+                    }
+                }
+            }
+
+            function initGallery() {
+                const container = document.getElementById('circular-gallery-canvas');
+                if (!container) return;
+
+                if (!ogl) {
+                    console.error("CircularGallery Error: OGL library not loaded. Please verify the CDN script is working.");
+                    return;
+                }
+
+                const bestSellersData = [
+                    {
+                        image: 'Visca.png',
+                        text: 'Visca',
+                        subtitle: 'Floral • Rp 80.000'
+                    },
+                    {
+                        image: 'VelvetBlue.png',
+                        text: 'Velvet Blue',
+                        subtitle: 'Fresh • Rp 160.000'
+                    },
+                    {
+                        image: 'Velvet.png',
+                        text: 'Velvet',
+                        subtitle: 'Oriental • Rp 80.000'
+                    },
+                    {
+                        image: 'Gorgeous.png',
+                        text: 'Travel Size',
+                        subtitle: 'Mix • Rp 11.000'
+                    },
+                    {
+                        image: 'OnlyHer.png',
+                        text: 'Inspired By Gowwee',
+                        subtitle: 'Mix • Rp 79.200'
+                    }
+                ];
+
+                try {
+                    const app = new CircularGalleryApp(container, {
+                        items: bestSellersData,
+                        bend: 3,
+                        borderRadius: 0.05,
+                        scrollEase: 0.025,
+                        textColor: 'white',
+                        subtitleColor: '#F5B400',
+                        font: "bold 26px 'Playfair Display', serif",
+                        subtitleFont: "16px 'Inter', sans-serif"
+                    });
+                } catch (err) {
+                    console.error("CircularGallery Initialization Error:", err);
+                }
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initGallery);
+            } else {
+                initGallery();
+            }
+        })();
+    </script>
+</body>
+
+</html>
