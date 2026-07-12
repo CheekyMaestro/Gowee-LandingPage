@@ -252,7 +252,9 @@
             50% { border-color: transparent; }
         }
 
-        * { cursor: none !important; }
+        @media (hover: hover) and (pointer: fine) {
+            * { cursor: none !important; }
+        }
 
         #cursor-dot {
             position: fixed;
@@ -291,16 +293,14 @@
             background: rgba(245, 180, 0, 0.08);
         }
 
-        /* Custom cursor dot/ring is a desktop-mouse affordance; on mobile there's
-           no mousemove to position it, so it just sits stuck in the corner. */
-        @media (max-width: 767px) {
+        /* Custom cursor dot/ring is a fine-pointer/hover affordance (real mouse).
+           On touch-only devices there's no mousemove to position it, so it would
+           just sit stuck in one spot. Gate on input capability, not viewport width,
+           so touch laptops/tablets are caught regardless of screen size. */
+        @media (hover: none), (pointer: coarse) {
             #cursor-dot,
             #cursor-ring {
                 display: none;
-            }
-
-            * {
-                cursor: auto !important;
             }
         }
     </style>
@@ -428,10 +428,20 @@
                         <span
                             class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
                     </a>
-                    <a class="px-10 py-4 border border-on-surface/20 text-on-surface font-label-bold text-label-bold rounded-full hover:bg-on-surface/5 hover:scale-105 transition-all duration-300"
-                        href="#scent-library">
-                        View Lookbook
-                    </a>
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-2">
+                        <a class="px-10 py-4 bg-[#EE4D2D] text-white font-label-bold text-label-bold rounded-full hover:brightness-110 hover:scale-105 transition-all duration-300 flex items-center gap-2"
+                            href="https://shopee.co.id/gowweeperfumes?categoryId=100630&amp;entryPoint=ShopByPDP&amp;itemId=6309478671&amp;upstream=search"
+                            target="_blank" rel="noopener noreferrer">
+                            <span class="material-symbols-outlined">shopping_bag</span>
+                            Beli di Shopee
+                        </a>
+                        <!-- TODO: ganti "Ribuan sudah beli" dengan angka penjualan asli begitu datanya tersedia -->
+                        <span class="flex items-center gap-1 text-xs text-on-surface-variant/60 sm:pl-1">
+                            <span class="material-symbols-outlined text-xs"
+                                style="font-variation-settings: 'FILL' 1; font-size: 14px;">star</span>
+                            Ribuan sudah beli
+                        </span>
+                    </div>
                 </div>
                 <div class="pt-10 flex flex-col sm:flex-row gap-6 text-on-surface-variant/80 text-sm">
                     <a href="https://wa.me/6285645464797" target="_blank" rel="noopener"
@@ -1454,6 +1464,17 @@
             const dot = document.getElementById('cursor-dot');
             const ring = document.getElementById('cursor-ring');
             if (!dot || !ring) return;
+
+            // Touch-only devices (incl. tablets) never fire mousemove, so the
+            // dot/ring would just sit stuck wherever they were placed. Skip
+            // wiring up listeners entirely and unmount the elements instead of
+            // only hiding them via CSS.
+            const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+            if (!hasFinePointer) {
+                dot.remove();
+                ring.remove();
+                return;
+            }
 
             let mouseX = window.innerWidth / 2;
             let mouseY = window.innerHeight / 2;
