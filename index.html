@@ -290,6 +290,19 @@
             border-color: #F5B400;
             background: rgba(245, 180, 0, 0.08);
         }
+
+        /* Custom cursor dot/ring is a desktop-mouse affordance; on mobile there's
+           no mousemove to position it, so it just sits stuck in the corner. */
+        @media (max-width: 767px) {
+            #cursor-dot,
+            #cursor-ring {
+                display: none;
+            }
+
+            * {
+                cursor: auto !important;
+            }
+        }
     </style>
 </head>
 
