@@ -484,8 +484,8 @@
     </section>
     <!-- 4. BEST SELLERS (data asli) -->
     <section class="relative bg-surface-dim scroll-mt-24 overflow-hidden" id="best-sellers">
-        <!-- 3D circular drag-to-rotate WebGL gallery, used on all screen sizes (phone, tablet, desktop). -->
-        <div class="flex relative w-full flex-col justify-center items-center" style="height: 80vh; min-height: 520px;">
+        <!-- Desktop (lg+): 3D circular drag-to-rotate WebGL gallery. -->
+        <div class="hidden lg:flex relative w-full flex-col justify-center items-center" style="height: 80vh; min-height: 520px;">
 
             <!-- Section Header absolute floating at the top -->
             <div class="absolute top-12 left-0 right-0 text-center px-gutter z-20 pointer-events-none">
@@ -501,6 +501,75 @@
 
             <!-- Quick navigation / footer link floating at the bottom -->
             <div class="absolute bottom-8 left-0 right-0 text-center z-20">
+                <a class="inline-flex items-center gap-2 text-on-surface-variant hover:text-accent-gold transition-colors font-label-bold text-sm bg-surface-container-low/60 backdrop-blur px-6 py-2 rounded-full border border-outline-variant/30"
+                    href="#scent-library">
+                    Lihat Semua Koleksi <span class="material-symbols-outlined text-sm">chevron_right</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Mobile & tablet (<lg): plain native horizontal scroll-snap carousel. No drag/cursor JS. -->
+        <div class="lg:hidden py-16">
+            <div class="text-center px-gutter mb-8">
+                <span class="text-accent-gold font-label-bold text-xs uppercase tracking-[0.3em] gold-underline">Curated Selection</span>
+                <h2 class="font-display-lg text-headline-md mt-4 text-white">Best Sellers</h2>
+                <p class="text-on-surface-variant text-xs mt-2">Geser untuk lihat koleksi ➜</p>
+            </div>
+
+            <div class="no-scrollbar flex overflow-x-auto snap-x snap-mandatory gap-4 px-gutter pb-2">
+                <div class="snap-center shrink-0 w-[70vw] sm:w-[45vw] md:w-[30vw] max-w-[280px] bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/20">
+                    <div class="relative aspect-[3/4] bg-surface-container-high overflow-hidden">
+                        <img src="Visca.png" alt="Foto produk Visca" class="w-full h-full object-contain p-5">
+                        <span class="absolute top-3 left-3 px-3 py-1 bg-surface/80 backdrop-blur text-accent-gold font-label-bold text-[10px] rounded-full uppercase border border-accent-gold/30">Floral</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-headline-md text-lg mb-1 text-white">Visca</h4>
+                        <div class="font-bold text-accent-gold">Rp 80.000</div>
+                    </div>
+                </div>
+                <div class="snap-center shrink-0 w-[70vw] sm:w-[45vw] md:w-[30vw] max-w-[280px] bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/20">
+                    <div class="relative aspect-[3/4] bg-surface-container-high overflow-hidden">
+                        <img src="VelvetBlue.png" alt="Foto produk Velvet Blue" class="w-full h-full object-contain p-5">
+                        <span class="absolute top-3 left-3 px-3 py-1 bg-surface/80 backdrop-blur text-accent-gold font-label-bold text-[10px] rounded-full uppercase border border-accent-gold/30">Fresh</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-headline-md text-lg mb-1 text-white">Velvet Blue</h4>
+                        <div class="font-bold text-accent-gold">Rp 160.000</div>
+                    </div>
+                </div>
+                <div class="snap-center shrink-0 w-[70vw] sm:w-[45vw] md:w-[30vw] max-w-[280px] bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/20">
+                    <div class="relative aspect-[3/4] bg-surface-container-high overflow-hidden">
+                        <img src="Velvet.png" alt="Foto produk Velvet" class="w-full h-full object-contain p-5">
+                        <span class="absolute top-3 left-3 px-3 py-1 bg-surface/80 backdrop-blur text-accent-gold font-label-bold text-[10px] rounded-full uppercase border border-accent-gold/30">Oriental</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-headline-md text-lg mb-1 text-white">Velvet</h4>
+                        <div class="font-bold text-accent-gold">Rp 80.000</div>
+                    </div>
+                </div>
+                <div class="snap-center shrink-0 w-[70vw] sm:w-[45vw] md:w-[30vw] max-w-[280px] bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/20">
+                    <div class="relative aspect-[3/4] bg-surface-container-high overflow-hidden">
+                        <img src="Gorgeous.png" alt="Foto produk Travel Size" class="w-full h-full object-contain p-5">
+                        <span class="absolute top-3 left-3 px-3 py-1 bg-surface/80 backdrop-blur text-accent-gold font-label-bold text-[10px] rounded-full uppercase border border-accent-gold/30">Mix</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-headline-md text-lg mb-1 text-white">Travel Size</h4>
+                        <div class="font-bold text-accent-gold">Rp 11.000</div>
+                    </div>
+                </div>
+                <div class="snap-center shrink-0 w-[70vw] sm:w-[45vw] md:w-[30vw] max-w-[280px] bg-surface-container-low rounded-2xl overflow-hidden border border-outline-variant/20">
+                    <div class="relative aspect-[3/4] bg-surface-container-high overflow-hidden">
+                        <img src="OnlyHer.png" alt="Foto produk Inspired By Gowwee" class="w-full h-full object-contain p-5">
+                        <span class="absolute top-3 left-3 px-3 py-1 bg-surface/80 backdrop-blur text-accent-gold font-label-bold text-[10px] rounded-full uppercase border border-accent-gold/30">Mix</span>
+                    </div>
+                    <div class="p-5">
+                        <h4 class="font-headline-md text-lg mb-1 text-white">Inspired By Gowwee</h4>
+                        <div class="font-bold text-accent-gold">Rp 79.200</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
                 <a class="inline-flex items-center gap-2 text-on-surface-variant hover:text-accent-gold transition-colors font-label-bold text-sm bg-surface-container-low/60 backdrop-blur px-6 py-2 rounded-full border border-outline-variant/30"
                     href="#scent-library">
                     Lihat Semua Koleksi <span class="material-symbols-outlined text-sm">chevron_right</span>
@@ -1939,6 +2008,11 @@
             function initGallery() {
                 const container = document.getElementById('circular-gallery-canvas');
                 if (!container) return;
+
+                // Desktop-only: below the lg breakpoint, Best Sellers renders as a
+                // plain scroll-snap carousel instead (see markup), so skip mounting
+                // the WebGL drag-to-rotate gallery and its mouse/touch listeners.
+                if (window.innerWidth < 1024) return;
 
                 if (!ogl) {
                     console.error("CircularGallery Error: OGL library not loaded. Please verify the CDN script is working.");
